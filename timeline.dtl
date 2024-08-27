@@ -1,0 +1,111 @@
+[background arg="res://Fondo1.0.png" fade="1.0"]
+[music path="res://Musica de fondo.mp3" fade="0.3" volume="-20.0"]
+[wait time="1.0"]
+[sound path="res://Narracion1.mp3" volume="0.0"]
+Narrador: Isabella, una niña curiosa, está en el patio de su casa, disfrutando de una tarde soleada. A su alrededor, hay varias macetas con plantas, una pila de juguetes, y un balde que su familia usa para regar las plantas. Mientras juega, Isabella escucha un zumbido molesto cerca de su oreja. Es un mosquito, pero no un mosquito cualquiera, sino uno que habla.
+[wait time="1.0" hide_text="false"]
+[sound path="res://mosquito.mp3" volume="0.0"]
+join Isabella (Mariofront) 1 [animation="Bounce In" length="1"]
+[sound path="res://saltosonido.mp3" volume="0.0"]
+[voice path="res://Isabella1.mp3" volume="0.0"]
+Isabella (Basico): ¿Qué es ese molesto sonido?
+[sound path="res://saltosonido.mp3" volume="0.0"]
+join Zancudo 3 [animation="Bounce In" length="1"]
+[voice path="res://Zancudo1.mp3" volume="0.0"]
+Zancudo (ZancudoBasico): Hola, Isabella. Soy un mosquito, y tengo un secreto muy importante que contarte sobre mi familia y el dengue. ¿Quieres escuchar?
+update Isabella (Sorprendida) [animation="Shake Y" length="1"]
+[voice path="res://Narrador2.mp3" volume="0.0"]
+Narrador: Isabella, sorprendida pero interesada, decide escuchar al mosquito. Pero el mosquito le plantea un desafío. Para aprender sobre cómo protegerse del dengue, Isabella tendrá que responder a varias preguntas.
+[voice path="res://Zancudo2.mp3" volume="0.0"]
+Zancudo: Veo que tienes un balde con agua en tu patio. ¿Qué crees que es mejor hacer con él?
+if {respuesta1} == "":
+	- Dejarlo lleno de agua por si alguien lo necesita.
+		[voice path="res://Narrador3.mp3" volume="0.0"]
+		Narrador: Isabella decide dejar el balde lleno de agua. El mosquito sonríe astutamente
+		update Zancudo (Zancudo enojado) [animation="Heartbeat" length="2"]
+		[voice path="res://Zancudo3.mp3" volume="0.0"]
+		Zancudo (Zancudo enojado): ¡Oh no, Isabella! Dejar el balde lleno de agua es perfecto para que mi familia ponga sus huevos. Esto podría hacer que haya más mosquitos como yo, y algunos podrían transmitir el dengue.
+		[sound path="res://Pierde.mp3" volume="0.0"]
+		update Isabella (Triste) [animation="Shake X" length="2" mirrored="true"]
+		[wait time="4.0"]
+		jump Pregunta2
+	- Vaciarlo y guardarlo boca abajo para que no acumule agua.
+		[voice path="res://Narrador4.mp3" volume="0.0"]
+		Narrador: Isabella decide vaciar el balde y guardarlo boca abajo. El mosquito se ve un poco triste, pero luego asiente.
+		update Zancudo (Zancudo triste) [animation="Tada" length="1" mirrored="false"]
+		[voice path="res://zancudo4.mp3" volume="0.0"]
+		Zancudo: ¡Bien hecho, Isabella! Al vaciar el balde y guardarlo boca abajo, evitas que nosotros, los mosquitos, pongamos nuestros huevos allí. ¡Eso ayuda a prevenir el dengue!
+		[sound path="res://gana.mp3" volume="0.0"]
+		update Isabella (Basico) [animation="Shake Y" length="1" mirrored="false"]
+		[wait time="4.0"]
+		jump Pregunta2
+label Pregunta2
+update Isabella (Basico) [ mirrored="false"]
+update Zancudo (ZancudoBasico)
+[voice path="res://Zancudo5.mp3" volume="0.0"]
+Zancudo: Veo que tienes plantas en el patio. Algunas tienen platitos debajo de las macetas. ¿Qué deberías hacer con esos platitos?
+if {respuesta1} == "":
+	- Dejarlos como están, con agua acumulada.
+		[voice path="res://Narrador6.mp3" volume="0.0"]
+		Narrador: Isabella decide dejar los platitos con agua acumulada. El mosquito se frota las patas con entusiasmo.
+		update Zancudo (Zancudo enojado) [animation="Heartbeat" length="2"]
+		[voice path="res://Zancudo6.mp3" volume="0.0"]
+		Zancudo (Zancudo enojado): ¡Oh no, Isabella! Los platitos con agua son como pequeños hogares para los huevos de mosquito. Al dejarlos con agua, permites que nazcan más mosquitos, y algunos podrían transmitir el dengue.
+		[sound path="res://Pierde.mp3" volume="0.0"]
+		update Isabella (Triste) [animation="Shake X" length="2" mirrored="true"]
+		[wait time="4.0"]
+		jump Pregunta3
+	- Revisarlos y vaciarlos regularmente.
+		[voice path="res://Narrador7.mp3" volume="0.0"]
+		Narrador: Isabella decide revisar y vaciar los platitos. El mosquito baja las alas, un poco desanimado.
+		update Zancudo (Zancudo triste) [animation="Tada" length="1" mirrored="false"]
+		[voice path="res://Zancudo 7.mp3" volume="0.0"]
+		Zancudo: ¡Estás en lo correcto, Isabella! Al vaciar los platitos regularmente, evitas que nosotros, los mosquitos, nos reproduzcamos. ¡Eso es excelente para prevenir el dengue!
+		[sound path="res://gana.mp3" volume="0.0"]
+		update Isabella (Basico) [animation="Shake Y" length="1" mirrored="false"]
+		[wait time="4.0"]
+		jump Pregunta3
+label Pregunta3
+update Zancudo (ZancudoBasico)
+update Isabella (Basico) [ mirrored="false"]
+[voice path="res://Zancudo8.mp3" volume="0.0"]
+Zancudo: Última pregunta, Isabella. ¿Qué deberías hacer si alguien en casa tiene fiebre alta, dolor detrás de los ojos, y se siente muy cansado?
+if {Respeusta3} == "":
+	- Darles medicamentos y esperar a que se mejore.
+		[voice path="res://Narrador9.mp3" volume="0.0"]
+		Narrador: Isabella piensa que es mejor darles medicamentos a la persona en casa. El mosquito se da un golpe en la frente.
+		update Zancudo (Zancudo enojado) [animation="Heartbeat" length="2"]
+		[voice path="res://Zancudo9.mp3" volume="0.0"]
+		Zancudo (Zancudo enojado): ¡Oh no, Isabella! Si alguien tiene esos síntomas, podría ser dengue. Es importante que lo lleves al médico para asegurarse de que reciba el tratamiento adecuado.
+		[sound path="res://Pierde.mp3" volume="0.0"]
+		update Isabella (Triste) [animation="Shake X" length="2" mirrored="true"]
+		[wait time="4.0"]
+		jump Final
+	- Llevarlo al centro de salud para que un médico lo revise.
+		[voice path="res://Narrador10.mp3" volume="0.0"]
+		Narrador: Isabella decide llevar a la persona al centro de salud. El mosquito asiente con aprobación.
+		update Zancudo (Zancudo triste) [animation="Tada" length="1" mirrored="false"]
+		[voice path="res://Zancudo10.mp3" volume="0.0"]
+		Zancudo: ¡Exactamente, Isabella! Es muy importante que un médico revise a la persona, porque si es dengue, necesita tratamiento y cuidados especiales.
+		[sound path="res://gana.mp3" volume="0.0"]
+		update Isabella (Basico) [animation="Shake Y" length="1" mirrored="false"]
+		[wait time="4.0"]
+		jump Final
+label Final
+update Isabella (Basico) [ mirrored="false"]
+update Zancudo (ZancudoBasico)
+[voice path="res://Narrador11.mp3" volume="0.0"]
+Narrador: Al final del juego, Isabella ha aprendido valiosas lecciones sobre cómo prevenir el dengue y proteger a su familia. El mosquito, aunque un poco decepcionado por no haber encontrado más lugares para poner sus huevos, felicita a Isabella por su buen trabajo.
+update Zancudo (ZancudoBasico) [animation="Tada" length="1"]
+[voice path="res://Zancudo11.mp3" volume="0.0"]
+Zancudo: ¡Has hecho un gran trabajo, Isabella! Ahora sabes cómo mantener a mi familia alejada de tu casa. ¡Sigue así y ayudarás a prevenir el dengue!
+[sound path="res://mosquito-29483 (mp3cut.net).mp3" volume="0.0"]
+update Zancudo [animation="Bounce" length="1" mirrored="true"]
+leave Zancudo [animation="Slide Out Right" length="2" mirrored="true"]
+[wait time="3.5"]
+update Isabella 2 [animation="Bounce" move_time="1"]
+[voice path="res://isabella2.mp3" volume="0.0"]
+Isabella: ¡Vaya... ha sido un día difícil, pero aprendí muchas cosas sobre el dengue! De ahora en adelante me cuidare a mí misma, a mi familia y a toda la comunidad para que prevengamos juntos el brote de dengue.
+[voice path="res://Isabella3.mp3" volume="0.0"]
+¡Hasta pronto! Cuídense mucho.
+leave Isabella [animation="Slide Out Right" length="1"]

@@ -1,0 +1,47 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Basico",
+"description": "",
+"display_name": "Isabella",
+"mirror": false,
+"nicknames": ["Isa"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Basico": {
+"export_overrides": {
+"image": "\"res://Isabellabasico1.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"Sorprendida": {
+"export_overrides": {
+"image": "\"res://Isabellasorprendida.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Triste": {
+"export_overrides": {
+"image": "\"res://Isabellatrsiste1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

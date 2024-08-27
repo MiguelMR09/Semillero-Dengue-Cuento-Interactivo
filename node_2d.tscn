@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5be3ykdi0vtf"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_2w3x1"]
+[ext_resource type="Texture2D" uid="uid://dx3qjhhim5ht7" path="res://menunuevo.png" id="2_2fn70"]
+[ext_resource type="Script" path="res://Button.gd" id="2_qeoxs"]
+[ext_resource type="Script" path="res://Salir.gd" id="3_pmsma"]
+[ext_resource type="Script" path="res://creditos.gd" id="3_x5stm"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2w3x1")
+
+[node name="Menunuevo" type="Sprite2D" parent="."]
+position = Vector2(577.755, 325.903)
+scale = Vector2(0.562086, 0.552303)
+texture = ExtResource("2_2fn70")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 355.0
+offset_top = 283.0
+offset_right = 613.0
+offset_bottom = 415.0
+
+[node name="jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "JUGAR"
+script = ExtResource("2_qeoxs")
+
+[node name="creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "CREDITOS"
+script = ExtResource("3_x5stm")
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SALIR"
+script = ExtResource("3_pmsma")
+
+[connection signal="pressed" from="VBoxContainer/jugar" to="VBoxContainer/jugar" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

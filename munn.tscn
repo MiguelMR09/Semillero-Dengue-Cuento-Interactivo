@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpskvjuqkf6wj"]
+
+[ext_resource type="Script" path="res://menuu.gd" id="1_bdw2l"]
+[ext_resource type="Script" path="res://Button.gd" id="2_bvl2t"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bdw2l")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 294.0
+offset_right = 604.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 26
+text = "JUGAR"
+script = ExtResource("2_bvl2t")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

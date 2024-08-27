@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ys6umvegka0c"]
+
+[ext_resource type="Texture2D" uid="uid://dyvfu6y8si71b" path="res://Creditosmenu.png" id="1_lia4d"]
+[ext_resource type="Script" path="res://Regresar.gd" id="2_ye3mg"]
+
+[node name="Creditos" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 531.0
+offset_top = 300.0
+offset_right = 589.0
+offset_bottom = 323.0
+text = "TESTEO"
+
+[node name="Creditosmenu" type="Sprite2D" parent="."]
+position = Vector2(578.124, 326.331)
+scale = Vector2(0.56304, 0.55499)
+texture = ExtResource("1_lia4d")
+
+[node name="Regresar" type="Button" parent="."]
+offset_left = 1047.0
+offset_top = 18.0
+offset_right = 1135.0
+offset_bottom = 49.0
+text = "REGRESAR"
+script = ExtResource("2_ye3mg")
+
+[connection signal="pressed" from="Regresar" to="Regresar" method="_on_pressed"]
